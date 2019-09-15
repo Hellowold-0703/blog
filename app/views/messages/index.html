@@ -19,11 +19,11 @@
 
 <nav class = "cyan lighten-4">
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo center">logo</a>
+    <a href="#" class="brand-logo center">Blog</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">JavaScript</a></li>
+      <li><a href="/users/sign_in">Sign in</a></li>
+      <li><a data-method="delete" href="/users/sign_out" rel="nofollow">Sign out</a></li>
+      <li><a href="collapsible.html">New</a></li>
     </ul>
   </div>
 </nav>
@@ -31,13 +31,15 @@
   <div class="col s12 m6 offset-m3 ">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
-        <span class="card-title">Card Title</span>
-        <p>I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively.</p>
+        <form class="new_message" id="new_message" action="/messages" accept-charset="UTF-8" method="post">
+          <label for="message_content">daly</label>
+          <input type="text" name="message[content]" id="message_content"/>
+        </form>
       </div>
       <div class="card-action">
-        <a href="#">This is a link</a>
-        <a href="#">This is a link</a>
+        <a href="#">Show</a>
+        <a href="#">Edit</a>
+        <a href="#">Destroy</a>
       </div>
     </div>
   </div>
