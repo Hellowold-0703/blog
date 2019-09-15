@@ -22,3 +22,22 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|e-mail|string|null: false, unique: true|
+|password|string|null: false|
+
+### Association
+- has_many :messages
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|message|text|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
