@@ -7,10 +7,12 @@
           <label for="message_content"></label>
           <%= message.text %>
       </div>
+      <% if user_signed_in? && current_user.id == message.user_id %>
       <div class="card-action">
         <a href="#">Show</a>
-        <a href="#">Edit</a>
-        <a href="#">Destroy</a>
+        <%= link_to "Edit","/messages/#{message.id}/edit", method: :get %>
+        <%= link_to "Destroy","/messages/#{message.id}", method: :delete %>
+      <% end %>
       </div>
     </div>
   </div>

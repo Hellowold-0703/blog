@@ -16,6 +16,22 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  def update
+    @message = Message.find(params[:id])
+    if @message.user_id == current_user.id
+       @message.update(message_params)
+       redirect_to root_path
+    end
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    if @message.user_id == current_user.id
+       @message.destroy
+       redirect_to root_path
+    end
+  end
+
   private
   
   def message_params
